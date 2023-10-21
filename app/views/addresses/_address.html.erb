@@ -1,0 +1,23 @@
+<div class="address">
+  <div class="upper-address">
+    <div class="address-user">
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= address.user.name %>
+    </div>
+    <div class="address-date">
+      <!-- 投稿した時刻を出力する -->
+      <%= address.created_at %>
+    </div> 
+  </div>
+  <div class="lower-address">
+    <div class="address-content">
+      <%= address.departure %>
+    </div>
+    <div class="address-content">
+      <%= address.destination_1 %>
+    </div>
+    <div class="address-content">
+      <%= address.destination_2 %>
+    </div>
+  </div>
+</div>
