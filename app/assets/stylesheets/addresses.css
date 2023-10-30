@@ -11,7 +11,7 @@
 .side-bar-header {
   height: 100px;
   padding: 0 20px;
-  background-color: #253141;
+  background-color: green;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,7 @@
 }
 
 .histories {
-  background-color: #2F3E51;
+  background-color: lightgreen;
   height: calc(100vh - 100px);
   padding: 0 20px;
   overflow: scroll;
@@ -44,7 +44,7 @@
 
 .history-name a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .search {
@@ -58,31 +58,17 @@
 }
 
 .address {
-  height: 300px;
+  height: 100px;
+  width: 100%;
+  font-size: 20px;
 }
 
-.upper-address{
-  display: flex;
-}
-
-
-.address-date {
-  color: #999;
-  font-size: 30px;
-  padding-left: 10px;
-}
-
-.lower-address {
-  height: 60%;
-  margin-top: 30px;
-  padding: 30px;
-  display: flex;
-}
 
 .address-content {
   color: #434a54;
-  font-size: 55px;
-  padding: 25px;
+  height: 100px;
+  width: 100%;
+  font-size: 20px;
 }
 .form {
   background-color: #DDDDDD;
@@ -110,7 +96,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  background-color: red;
 }
 
 .add-button {
@@ -125,4 +110,8 @@
   height: 50px;
   width: 100%;
   padding: 20px;
+}
+
+.back-btn{
+  margin: auto;
 }
