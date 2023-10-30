@@ -4,9 +4,11 @@
   </div>
   <div class="search">
     <%= form_with model: [@departure, @first_destination, @second_destination], class: 'form', local: true, url: create_and_calculate_path do |f| %>
-      <div class="form-input">
-        <%= f.text_field :address, class: 'form-message', placeholder: '出発地' %>
-      </div>
+      <%= f.fields_for :departure do |departure_form| %>
+        <div class="form-input">
+          <%= departure_form.text_field :address, class: 'form-message', placeholder: '出発地' %>
+        </div>
+      <% end %>
 
       <%= f.fields_for :first_destination do |first_destination_form| %>
         <div class="form-input">

@@ -17,9 +17,9 @@ class AddressesController < ApplicationController
     @second_destination = SecondDestination.new(second_destination_params)
     if @departure.save && @first_destination.save && @second_destination.save
       # 出発地、目的地1、目的地2のアドレスをデータベースから読み込み
-      @departure = Departure.find_by(address: params[:departure][:address])
-      @first_destination = FirstDestination.find_by(address: params[:first_destination][:address])
-      @second_destination = SecondDestination.find_by(address: params[:second_destination][:address])
+      @departure = Departure.find_by(address: departure_params[:address])
+      @first_destination = FirstDestination.find_by(address: first_destination_params[:address])
+      @second_destination = SecondDestination.find_by(address: second_destination_params[:address])
       # Geocoderを使用して緯度経度情報を取得
       departure_coordinates = [@departure.latitude, @departure.longitude]
       destination1_coordinates = [@first_destination.latitude, @first_destination.longitude]
