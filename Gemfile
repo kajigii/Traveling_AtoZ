@@ -81,3 +81,7 @@ end
 gem 'pry-rails'
 
 gem 'devise'
+
+gem 'google_maps_service'
+gem 'geocoder'
+gem 'geokit-rails'

@@ -3,24 +3,34 @@
     <%= render "side_bar" %>
   </div>
   <div class="search">
-    <%# 検索フォーム%>
-    <%= form_with model: @address, class: 'form', local: true do |f| %>
+    <%= form_with model: [@departure, @first_destination, @second_destination], class: 'form', local: true, url: create_and_calculate_path do |f| %>
       <div class="form-input">
-        <%= f.text_field :departure, class: 'form-message', placeholder: '出発地' %>
-        <%= f.text_field :destination_1, class: 'form-message', placeholder: '目的地1' %>
-        <%= f.text_field :destination_2, class: 'form-message', placeholder: '目的地2' %> 
+        <%= f.text_field :address, class: 'form-message', placeholder: '出発地' %>
       </div>
-      <%# フォーム追加、検索機能は後で実装%>
+
+      <%= f.fields_for :first_destination do |first_destination_form| %>
+        <div class="form-input">
+          <%= first_destination_form.text_field :address, class: 'form-message', placeholder: '目的地1' %>
+        </div>
+      <% end %>
+
+      <%= f.fields_for :second_destination do |second_destination_form| %>
+        <div class="form-input">
+          <%= second_destination_form.text_field :address, class: 'form-message', placeholder: '目的地2' %>
+        </div>
+      <% end %>
+
       <div class="button">
         <div class="add-button">
           <a href="#">+</a>
         </div>
-        <%= f.submit '検索', class: 'form-submit' %> 
-        <%=link_to 'もどる', root_path, class:"back-btn" %>
-     </div>
-    <% end %> 
+        <%= f.submit '検索', class: 'form-submit' %>
+        <%= link_to 'もどる', root_path, class: "back-btn" %>
+      </div>
+    <% end %>
   </div>
 </div>
+
 
 
 

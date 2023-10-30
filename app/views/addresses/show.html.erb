@@ -6,18 +6,12 @@
     <div class="addresses">
       <div class="address">
         <h1>最短距離計算結果</h1>
-        <p>出発地:</p>
+        <p>出発地:<%= @departure.address %> </p>
       </div>       
       <div class="address-content">
-        <p>1番目:</p>
-        <p>2番目:</p>
+        <p>1番目: <%= @shortest_destination %></p>
+        <p>2番目: <%= @long_destination %></p>
       </div>
     </div>
-    <%# 検索フォーム%>
-    <%= link_to new_address_path, class: 'purchase-btn' do %>
-      <div class="user_nav grid-6">
-        <a class="post" href="/addresses/new">調べる</a>
-      </div>
-    <% end %>
   </div>
 </div>
